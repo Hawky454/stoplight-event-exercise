@@ -71,10 +71,10 @@ goButton.addEventListener('click', function() {
 //   }
 //   //console.log("Event target", event.target);
 // });
-//still confused about the using the switch statement^^
+// still confused about the using the switch statement^^
 
 
-//Part 2 add new DOM events listeners and handlers to log the mouse state of //each button to the console
+// Part 2.
 
 
 stopButton.addEventListener('mouseenter', function() {
