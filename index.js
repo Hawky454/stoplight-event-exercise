@@ -10,9 +10,14 @@ let stopButton = document.getElementById('stopButton');
 let slowButton = document.getElementById('slowButton');
 let goButton = document.getElementById('goButton');
 
+//let trafficLight = document.getElementById('traffic-light');
+
+//ask Louis how to get a class.
+//let bulb = document.getElemtsByClass('.bulb');
+
 let stopLightOn = false;
 let slowLightOn = false;
-let goButtonOn = false;
+let goLightOn = false;
 
 
 stopButton.addEventListener('click', function() {
@@ -38,12 +43,75 @@ stopButton.addEventListener('click', function() {
   });
 
 goButton.addEventListener('click', function() {
-  if(goButtonOn === true) {
+  if(goLightOn === true) {
     greenLight.style.backgroundColor = 'black';
-    goButtonOn = false;
+    goLightOn = false;
   } else {
     greenLight.style.backgroundColor = 'green';
-    goButtonOn = true;
+    goLightOn = true;
   }
 });
+
+
+
+// controls.addEventListener('click', function () {
+//   console.log(`Entered ${event.target.textContent} button`);
+//   switch (event.target.textContent) {
+//     case 'Stop':
+//
+//       break;
+//     case 'Slow':
+//
+//       break;
+//     case 'Go':
+//
+//       break;
+//     default:
+//
+//   }
+//   //console.log("Event target", event.target);
+// });
+//still confused about the using the switch statement^^
+
+
+//Part 2 add new DOM events listeners and handlers to log the mouse state of //each button to the console
+
+
+stopButton.addEventListener('mouseenter', function() {
+  console.log(`Entered ${event.target.textContent} button`);
+});
+stopButton.addEventListener('mouseleave', function() {
+  console.log(`Left ${stopButton.textContent} button`);
+});
+
+//slowButton
+slowButton.addEventListener('mouseenter', function() {
+  console.log(`Entered ${event.target.textContent} button`);
+});
+slowButton.addEventListener('mouseleave', function() {
+  console.log(`Left ${event.target.textContent} button`);
+});
+
+//goButton
+goButton.addEventListener('mouseenter', function() {
+  console.log(`Entered ${event.target.textContent} button`);
+});
+goButton.addEventListener('mouseleave', function() {
+  console.log(`Left ${goButton.textContent} button`);
+});
+
+
+
+
+
+//Bonus
+
+controls.addEventListener('click', function() {
+  if((stopLightOn === true)  || (slowLightOn === true) || (goLightOn === true))  {
+    console.log(`${event.target.textContent} bulb on`);
+  } else {
+    console.log(`${event.target.textContent} bulb off`);
+ }
+});
+
 })();
